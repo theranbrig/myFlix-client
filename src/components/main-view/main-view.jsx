@@ -156,25 +156,22 @@ class MainView extends React.Component {
 
 						<Route
 							exact
-							path="/users/"
+							path="/users/:Username"
 							render={() => {
-								if (movies.length === 0) return <div className="main-view" />;
 								return <ProfileView movies={movies} />;
 							}}
 						/>
 
 						<Route
-							path="/users/update/"
+							path="/users/update/:Username"
 							render={() => {
-								if (movies.length === 0) return <div className="main-view" />;
 								return <ProfileUpdate movies={movies} />;
 							}}
 						/>
 
 						<Route
-							path="/genres/:name"
+							path="/genres/:Name"
 							render={({ match }) => {
-								if (movies.length === 0) return <div className="main-view" />;
 								return (
 									<GenreView
 										genre={movies.find(
@@ -187,7 +184,7 @@ class MainView extends React.Component {
 						/>
 
 						<Route
-							path="/directors/:name"
+							path="/directors/:Name"
 							render={({ match }) => {
 								if (movies.length === 0) return <div className="main-view" />;
 								return (
